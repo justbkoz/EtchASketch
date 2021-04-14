@@ -1,8 +1,16 @@
 const slider = document.getElementById('myRange');
 const gridSize = document.getElementById('gridSize')
 const container = document.getElementById('container')
-gridSize.innerText = 'Grid Size 16 X 16'
-let size = 16;
+gridSize.innerText = 'Grid Size 10 X 10'
+let size = 10;
+for (i = 0; i < 100; i++) {
+    let newDiv = document.createElement('div');
+    newDiv.className = 'grid';
+    newDiv.id = `grid${i}`;
+    container.appendChild(newDiv);
+    document.getElementById(`grid${i}`).addEventListener('mouseover', mouseOver);
+}
+container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
 
 slider.onchange = function () {
     gridSize.innerText = `Grid Size ${this.value} X ${this.value}`;
@@ -17,13 +25,14 @@ slider.onchange = function () {
         let newDiv = document.createElement('div');
         newDiv.className = 'grid';
         newDiv.id = `grid${i}`;
-        newDiv.appendChild(document.createTextNode([i])); //testing my divs are working
         container.appendChild(newDiv);
+        document.getElementById(`grid${i}`).addEventListener('mouseover', mouseOver);
     };
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+};
 
 
+function mouseOver(e) {
+    console.log('test');
+    e.target.style.backgroundColor = 'black';
 }
-
-
-container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-// let newGrid = document.getElementsByClassName('grid');

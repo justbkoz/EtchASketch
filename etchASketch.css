@@ -1,9 +1,14 @@
+body {
+    background-color: rgba(125, 10, 231, 0.445);
+}
+
 #container {
-    width: 1000px;
-    height: 1000px;
+    margin: auto;
+    width: 70vmin;
+    height: 70vmin;
     display: grid;
     padding: 10px;
-    background-color: gray;
+    background-color: rgb(44, 44, 44);
 }
 
 .grid {
