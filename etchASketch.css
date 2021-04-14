@@ -1,0 +1,12 @@
+#container {
+    width: 1000px;
+    height: 1000px;
+    display: grid;
+    padding: 10px;
+    background-color: gray;
+}
+
+.grid {
+    background-color: lightblue;
+    font-size: 6px;
+}
